@@ -1,0 +1,49 @@
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">home</i>Home
+            </a>
+            <a mat-list-item [matMenuTriggerFor]="menuTecnico">
+                <mat-menu #menuTecnico="matMenu">
+                    <a routerLink="tecnicos/create" mat-menu-item>Cadastrar Técnico</a>
+                    <a routerLink="tecnicos" mat-menu-item>Técnicos</a>
+                
+                </mat-menu>
+                <i class="material-icons">work</i>Técnico
+            </a>
+            <a mat-list-item [matMenuTriggerFor]="menuCliente">
+                <mat-menu #menuCliente="matMenu">
+                    <a routerLink="clientes/create" mat-menu-item>Cadastrar Cliente</a>
+                    <a routerLink="clientes" mat-menu-item>Clientes</a>
+                
+                </mat-menu>
+                <i class="material-icons">person_search</i>Cliente
+            </a>
+            <a mat-list-item [matMenuTriggerFor]="menuOs">
+                <mat-menu #menuOs="matMenu">
+                    <a routerLink="os/create" mat-menu-item>Criar Ordem de Serviço</a>
+                    <a routerLink="os" mat-menu-item>Aberto ou Em Andamento</a>
+                    <a routerLink="os/closed" mat-menu-item>Encerrado</a>
+                </mat-menu>
+                <i class="material-icons">person_pin</i>Ordens de Serviço
+            </a>
+            <a mat-list-item [matMenuTriggerFor]="menuRelatorio">
+                <mat-menu #menuRelatorio="matMenu">
+                    <a routerLink="relatorio/aberto" mat-menu-item>Relatorio de OS Aberta</a>
+                    <a routerLink="relatorio/fechado" mat-menu-item>Relatorio de OS Encerrada</a>
+                </mat-menu>
+                <i class="material-icons">summarize</i>Relatórios
+            </a>
+
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

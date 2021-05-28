@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bciinf1" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="20" rightMargin="10" topMargin="15" bottomMargin="10" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet" uuid="9fc6f861-e0c1-47b8-b3cf-5545a1a9f93a">
+	<property name="ireport.zoom" value="1.9487171000000034"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="192"/>
+	<property name="ireport.callouts" value="##Sun Apr 03 14:56:39 BRT 2011"/>
+	<parameter name="ds_empresa" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:/prodata/sigp/flex/arrecadacao/web/data/relatoriojasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nomeEmpresa" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="usuario_impressao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="clausulaWhereJasper" class="java.lang.String">
+		<defaultValueExpression><![CDATA["WHERE FALSE"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="caminho_logo_prefeitura" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="codigo" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+	"BCI"."CCI" as                 bci_CCI,
+	"DISTRITO"."NOME" as           distrito_NOME,
+	"SETOR"."NOME" as              setor_NOME,
+	"BCI"."QUADRA1" as             bci_QUADRA1,
+	"BCI"."LOTE1" as               bci_LOTE1,
+	"BCI"."UNIDADE" as             bci_UNIDADE,
+	"BCI"."ZONA" as                bci_ZONA,
+	"LOGRA"."NOME" as              logra_NOME,
+	"BAIRRO"."NOME" as             bairro_NOME,
+	"BAIRRO_PESSOA"."NOME" as      bairro_nome_pessoa,
+	"BCI"."NUMERO" as              bci_NUMERO,
+	"BCI"."IT01" as                bci_IT01,
+	"BCI"."IT02" as                bci_IT02,
+	"BCI"."IT03" as                bci_IT03,
+	"BCI"."IT04" as                bci_IT04,
+	"BCI"."IT05" as                bci_IT05,
+	"BCI"."IT06" as                bci_IT06,
+	"BCI"."IT07" as                bci_IT07,
+	"BCI"."IT08" as                bci_IT08,
+	"BCI"."IT09" as                bci_IT09,
+	"BCI"."IT10" as                bci_IT10,
+	"BCI"."IT11" as                bci_IT11,
+	"BCI"."IT12" as                bci_IT12,
+	"BCI"."IT13" as                bci_IT13,
+	"BCI"."IT14" as                bci_IT14,
+	"BCI"."IT15" as                bci_IT15,
+	"BCI"."IT16" as                bci_IT16,
+	"BCI"."IT17" as                bci_IT17,
+	"BCI"."IT18" as                bci_IT18,
+	"BCI"."IT19" as                bci_IT19,
+	"BCI"."IT20" as                bci_IT20,
+	"BCI"."IT21" as                bci_IT21,
+	"BCI"."IT22" as                bci_IT22,
+	"BCI"."IT23" as                bci_IT23,
+	"BCI"."IT24" as                bci_IT24,
+	"BCI"."IT25" as                bci_IT25,
+	"BCI"."IT26" as                bci_IT26,
+	"BCI"."IT27" as                bci_IT27,
+	"BCI"."IT28" as                bci_IT28,
+	"BCI"."IT29" as                bci_IT29,
+	"BCI"."IT30" as                bci_IT30,
+	"BCI"."IT31" as                bci_IT31,
+	"BCI"."IT32" as                bci_IT32,
+	"BCI"."IT33" as                bci_IT33,
+	"BCI"."IT34" as                bci_IT34,
+	"BCI"."IT35" as                bci_IT35,
+	"BCI"."IT36" as                bci_IT36,
+	"BCI"."IT37" as                bci_IT37,
+	"BCI"."IT38" as                bci_IT38,
+	"BCI"."IT39" as                bci_IT39,
+	"BCI"."IT40" as                bci_IT40,
+	"BCI"."IT41" as                bci_IT41,
+	"BCI"."IT42" as                bci_IT42,
+	"BCI"."IT43" as                bci_IT43,
+	"BCI"."IT44" as                bci_IT44,
+	"BCI"."IT45" as                bci_IT45,
+	"BCI"."IT46" as                bci_IT46,
+	"BCI"."IT47" as                bci_IT47,
+	"BCI"."IT48" as                bci_IT48,
+	"BCI"."INF01" as               bci_INF01,
+	"BCI"."INF02" as               bci_INF02,
+	"BCI"."INF03" as               bci_INF03,
+	"BCI"."INF04" as               bci_INF04,
+	"BCI"."INF05" as               bci_INF05,
+	"BCI"."INF06" as               bci_INF06,
+	"BCI"."INF07" as               bci_INF07,
+	"BCI"."INF08" as               bci_INF08,
+	"BCI"."INF09" as               bci_INF09,
+	"BCI"."INF10" as               bci_INF10,
+	"BCI"."INF11" as               bci_INF11,
+	"BCI"."INF12" as               bci_INF12,
+	"BCI"."INF13" as               bci_INF13,
+	"BCI"."INF14" as               bci_INF14,
+	"BCI"."INF15" as               bci_INF15,
+	"BCI"."AREA_LOTE" as           bci_AREA_LOTE,
+	"BCI"."AREA_LOTE_VILA" as      bci_AREA_LOTE_VILA,
+	"BCI"."AREA_EDIF_UNI" as       bci_AREA_EDIF_UNI,
+	"BCI"."QTDE_UNI_LOTE" as       bci_QTDE_UNI_LOTE,
+	"BCI"."AREA_TOTAL_EDIF" as     bci_AREA_TOTAL_EDIF,
+	"BCI"."QTDE_PAVIMENTOS" as     bci_QTDE_PAVIMENTOS,
+	"BCI"."VALOR_M2_LOTE" as       bci_VALOR_M2_LOTE,
+	"BCI"."VALOR_VENAL" as         bci_VALOR_VENAL,
+	"BCI"."DISTRITO" as            bci_DISTRITO,
+	"BCI"."AREA" as                bci_AREA,
+	"PESSOA"."NOME" as             pessoa_NOME,
+	"PESSOA"."APTO" as             pessoa_APTO,
+	"PESSOA"."BLOCO" as             pessoa_BLOCO,
+	"PESSOA"."APTO_C" as             pessoa_APTO_C,
+	"PESSOA"."BLOCO_C" as             pessoa_BLOCO_C,
+	EDIFICIO."DS_EDIFICIO" as     PESSOA_EDIFICIO,
+	EDIFICIO_c."DS_EDIFICIO" as     PESSOA_EDIFICIO_c,
+	"BCI"."TESTADA_1" as           bci_TESTADA_1,
+	"BCI"."QUADRA" as              bci_QUADRA,
+	"BCI"."LOTE" as                bci_LOTE,
+	"ARQ1144"."DS_EDIFICIO" as     ARQ1144_DS_EDIFICIO,
+	"BCI"."CONJUNTO" as            bci_CONJUNTO,
+	"BCI"."BLOCO" as               bci_BLOCO,
+	"BCI"."APTO" as                bci_APTO,
+	"PESSOA"."END_CORRESP" as      pessoa_END_CORRESP,
+	"PESSOA"."COMPLEM_C" as        pessoa_COMPLEM_C,
+	"PESSOA"."COMPLEM" as          pessoa_COMPLEM,
+	"PESSOA"."LOTE_C" as           pessoa_LOTE_C,
+	"PESSOA"."LOTE" as             pessoa_LOTE,
+	"PESSOA"."NUMERO_C" as         pessoa_NUMERO_C,
+	"PESSOA"."NUMERO" as           pessoa_NUMERO,
+	"PESSOA"."QUADRA_C" as         pessoa_QUADRA_C,
+	"PESSOA"."QUADRA" as           pessoa_QUADRA,
+	end_contribuinte.bairro_nome as        pessoa_NM_BAIRRO,
+	"PESSOA"."NM_BAIRRO_C" as      pessoa_NM_BAIRRO_C,
+	"PESSOA"."BAIRRO" as        pessoa_COD_BAIRRO,
+	"PESSOA"."NM_LOGRA_C" as       pessoa_NM_LOGRA_C,
+	"PESSOA"."NM_LOGRA" as         pessoa_NM_LOGRA,
+	"PESSOA"."PESSOA_TXT" as       pessoa_PESSOA_TXT,
+	"PESSOA"."CCP" as         	pessoa_CCP,
+	"BCI"."DT_CONSTRUCAO" as       bci_DT_CONSTRUCAO,
+	"BCI"."COMPLEMENTO"	as	       bci_COMPLEMENTO,
+	"BCI"."CASA" as bci_casa,
+	"BCI"."DISTRITO" || '' || "BCI"."AREA" || "BCI"."QUADRA1" || "BCI"."LOTE1"  || "BCI"."UNIDADE" AS INSCRICAO,
+	"BCI"."NUM_HABITE_SE" as NUM_HABITE_SE,
+	"BCI"."DATA_HABITE_SE" as DATA_HABITE_SE
+FROM
+	"SCH"."BCI" "BCI"
+	LEFT OUTER JOIN "SCH"."PESSOA" "PESSOA" ON "BCI"."CCP"="PESSOA"."CCP"
+	LEFT OUTER JOIN "SCH"."DISTRITO" "DISTRITO" ON "BCI"."DISTRITO"="DISTRITO"."CODIGO"
+	LEFT OUTER JOIN "SCH"."SETOR" "SETOR" ON "BCI"."AREA"="SETOR"."CODIGO"
+	LEFT OUTER JOIN "SCH"."LOGRA" "LOGRA" ON "BCI"."LOGRA_1"="LOGRA"."CODIGO"
+	LEFT OUTER JOIN "SCH"."BAIRRO" "BAIRRO" ON "BCI"."BAIRRO"="BAIRRO"."CODIGO"
+	LEFT OUTER JOIN "SCH"."BAIRRO" "BAIRRO_PESSOA" ON "PESSOA"."BAIRRO"="BAIRRO_PESSOA"."CODIGO"
+	LEFT OUTER JOIN "SCH"."ARQ1144" "ARQ1144" ON "BCI"."EDIFICIO"="ARQ1144"."CD_EDIFICIO"
+	LEFT OUTER JOIN "SCH"."ARQ1144" EDIFICIO ON "PESSOA"."EDIFICIO"=EDIFICIO."CD_EDIFICIO"
+	LEFT OUTER JOIN "SCH"."ARQ1144" EDIFICIO_c ON "PESSOA"."EDIFICIO"=EDIFICIO_c."CD_EDIFICIO"
+	left join "SCH"."END_CONTRIBUINTE" end_contribuinte on end_contribuinte."CCP" = "BCI"."CCP"
+$P!{clausulaWhereJasper}
+ORDER BY
+	"BCI"."DISTRITO" || '' || "BCI"."AREA" || "BCI"."QUADRA1" || "BCI"."LOTE1"  || "BCI"."UNIDADE",
+	"BCI"."CCI"]]>
+	</queryString>
+	<field name="bci_cci" class="java.lang.Integer"/>
+	<field name="distrito_nome" class="java.lang.String"/>
+	<field name="setor_nome" class="java.lang.String"/>
+	<field name="bci_quadra1" class="java.lang.String"/>
+	<field name="bci_lote1" class="java.lang.String"/>
+	<field name="bci_unidade" class="java.lang.Integer"/>
+	<field name="bci_zona" class="java.lang.Integer"/>
+	<field name="logra_nome" class="java.lang.String"/>
+	<field name="bairro_nome" class="java.lang.String"/>
+	<field name="bairro_nome_pessoa" class="java.lang.String"/>
+	<field name="bci_numero" class="java.lang.String"/>
+	<field name="bci_it01" class="java.lang.Integer"/>
+	<field name="bci_it02" class="java.lang.Integer"/>
+	<field name="bci_it03" class="java.lang.Integer"/>
+	<field name="bci_it04" class="java.lang.Integer"/>
+	<field name="bci_it05" class="java.lang.Integer"/>
+	<field name="bci_it06" class="java.lang.Integer"/>
+	<field name="bci_it07" class="java.lang.Integer"/>
+	<field name="bci_it08" class="java.lang.Integer"/>
+	<field name="bci_it09" class="java.lang.Integer"/>
+	<field name="bci_it10" class="java.lang.Integer"/>
+	<field name="bci_it11" class="java.lang.Integer"/>
+	<field name="bci_it12" class="java.lang.Integer"/>
+	<field name="bci_it13" class="java.lang.Integer"/>
+	<field name="bci_it14" class="java.lang.Integer"/>
+	<field name="bci_it15" class="java.lang.Integer"/>
+	<field name="bci_it16" class="java.lang.Integer"/>
+	<field name="bci_it17" class="java.lang.Integer"/>
+	<field name="bci_it18" class="java.lang.Integer"/>
+	<field name="bci_it19" class="java.lang.Integer"/>
+	<field name="bci_it20" class="java.lang.Integer"/>
+	<field name="bci_it21" class="java.lang.Integer"/>
+	<field name="bci_it22" class="java.lang.Integer"/>
+	<field name="bci_it23" class="java.lang.Integer"/>
+	<field name="bci_it24" class="java.lang.Integer"/>
+	<field name="bci_it25" class="java.lang.Integer"/>
+	<field name="bci_it26" class="java.lang.Integer"/>
+	<field name="bci_it27" class="java.lang.Integer"/>
+	<field name="bci_it28" class="java.lang.Integer"/>
+	<field name="bci_it29" class="java.lang.Integer"/>
+	<field name="bci_it30" class="java.lang.Integer"/>
+	<field name="bci_it31" class="java.lang.Integer"/>
+	<field name="bci_it32" class="java.lang.Integer"/>
+	<field name="bci_it33" class="java.lang.Integer"/>
+	<field name="bci_it34" class="java.lang.Integer"/>
+	<field name="bci_it35" class="java.lang.Integer"/>
+	<field name="bci_it36" class="java.lang.Integer"/>
+	<field name="bci_it37" class="java.lang.Integer"/>
+	<field name="bci_it38" class="java.lang.Integer"/>
+	<field name="bci_it39" class="java.lang.Integer"/>
+	<field name="bci_it40" class="java.lang.Integer"/>
+	<field name="bci_it41" class="java.lang.Integer"/>
+	<field name="bci_it42" class="java.lang.Integer"/>
+	<field name="bci_it43" class="java.lang.Integer"/>
+	<field name="bci_it44" class="java.lang.Integer"/>
+	<field name="bci_it45" class="java.lang.Integer"/>
+	<field name="bci_it46" class="java.lang.Integer"/>
+	<field name="bci_it47" class="java.lang.Integer"/>
+	<field name="bci_it48" class="java.lang.Integer"/>
+	<field name="bci_inf01" class="java.lang.String"/>
+	<field name="bci_inf02" class="java.lang.String"/>
+	<field name="bci_inf03" class="java.lang.String"/>
+	<field name="bci_inf04" class="java.lang.String"/>
+	<field name="bci_inf05" class="java.lang.String"/>
+	<field name="bci_inf06" class="java.lang.String"/>
+	<field name="bci_inf07" class="java.lang.String"/>
+	<field name="bci_inf08" class="java.lang.String"/>
+	<field name="bci_inf09" class="java.lang.String"/>
+	<field name="bci_inf10" class="java.lang.String"/>
+	<field name="bci_inf11" class="java.lang.String"/>
+	<field name="bci_inf12" class="java.lang.String"/>
+	<field name="bci_inf13" class="java.lang.String"/>
+	<field name="bci_inf14" class="java.lang.String"/>
+	<field name="bci_inf15" class="java.lang.String"/>
+	<field name="bci_area_lote" class="java.math.BigDecimal"/>
+	<field name="bci_area_lote_vila" class="java.math.BigDecimal"/>
+	<field name="bci_area_edif_uni" class="java.math.BigDecimal"/>
+	<field name="bci_qtde_uni_lote" class="java.lang.Integer"/>
+	<field name="bci_area_total_edif" class="java.math.BigDecimal"/>
+	<field name="bci_qtde_pavimentos" class="java.lang.Integer"/>
+	<field name="bci_valor_m2_lote" class="java.math.BigDecimal"/>
+	<field name="bci_valor_venal" class="java.math.BigDecimal"/>
+	<field name="bci_distrito" class="java.lang.Integer"/>
+	<field name="bci_area" class="java.lang.Integer"/>
+	<field name="pessoa_nome" class="java.lang.String"/>
+	<field name="pessoa_apto" class="java.lang.String"/>
+	<field name="pessoa_bloco" class="java.lang.String"/>
+	<field name="pessoa_apto_c" class="java.lang.String"/>
+	<field name="pessoa_bloco_c" class="java.lang.String"/>
+	<field name="pessoa_edificio" class="java.lang.String"/>
+	<field name="pessoa_edificio_c" class="java.lang.String"/>
+	<field name="bci_testada_1" class="java.math.BigDecimal"/>
+	<field name="bci_quadra" class="java.lang.String"/>
+	<field name="bci_lote" class="java.lang.String"/>
+	<field name="arq1144_ds_edificio" class="java.lang.String"/>
+	<field name="bci_conjunto" class="java.lang.String"/>
+	<field name="bci_bloco" class="java.lang.String"/>
+	<field name="bci_apto" class="java.lang.String"/>
+	<field name="pessoa_end_corresp" class="java.lang.String"/>
+	<field name="pessoa_complem_c" class="java.lang.String"/>
+	<field name="pessoa_complem" class="java.lang.String"/>
+	<field name="pessoa_lote_c" class="java.lang.String"/>
+	<field name="pessoa_lote" class="java.lang.String"/>
+	<field name="pessoa_numero_c" class="java.lang.String"/>
+	<field name="pessoa_numero" class="java.lang.String"/>
+	<field name="pessoa_quadra_c" class="java.lang.String"/>
+	<field name="pessoa_quadra" class="java.lang.String"/>
+	<field name="pessoa_nm_bairro" class="java.lang.String"/>
+	<field name="pessoa_nm_bairro_c" class="java.lang.String"/>
+	<field name="pessoa_cod_bairro" class="java.lang.Integer"/>
+	<field name="pessoa_nm_logra_c" class="java.lang.String"/>
+	<field name="pessoa_nm_logra" class="java.lang.String"/>
+	<field name="pessoa_pessoa_txt" class="java.lang.String"/>
+	<field name="pessoa_ccp" class="java.lang.Integer"/>
+	<field name="bci_dt_construcao" class="java.sql.Date"/>
+	<field name="bci_complemento" class="java.lang.String"/>
+	<field name="bci_casa" class="java.lang.String"/>
+	<field name="inscricao" class="java.lang.String"/>
+	<field name="num_habite_se" class="java.lang.Long"/>
+	<field name="data_habite_se" class="java.sql.Date"/>
+	<group name="inscricao">
+		<groupExpression><![CDATA[$F{inscricao}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="cci">
+		<groupExpression><![CDATA[$F{bci_cci}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<rectangle>
+					<reportElement x="0" y="0" width="560" height="13" backcolor="#D7D7D7" uuid="4a3829cc-e363-4d55-b161-d2bd10680cea"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="0" y="14" width="61" height="11" uuid="d86753a2-a93f-405a-9261-23576ccb9fb2"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CCI:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="14" width="148" height="11" uuid="de2d833f-0441-439d-bf47-101d242bb0c9"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_cci}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="0" y="0" width="115" height="13" backcolor="#FFFFFF" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" DADOS DO IMÓVEL"]]></textFieldExpression>
+				</textField>
+			</band>
+			<band height="143">
+				<rectangle>
+					<reportElement x="0" y="73" width="560" height="13" backcolor="#D7D7D7" uuid="4a3829cc-e363-4d55-b161-d2bd10680cea"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="0" y="3" width="61" height="11" uuid="8001135f-623c-4585-9bc1-c9c9cd234212"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Distrito:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="14" width="61" height="11" uuid="5238bb8c-8dec-40b1-b39b-e674ed64d952"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Setor:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="25" width="61" height="11" uuid="e4187d90-44e6-44d9-a720-4ae6d3c96150"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lograd.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="36" width="61" height="11" uuid="304b170d-0541-4fba-be64-f8c4598575ae"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Complem.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="47" width="61" height="11" uuid="9dedb56c-5ca8-4ecf-970e-7285103426fe"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Edifício:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="96" width="61" height="11" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Proprietário:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="107" width="61" height="11" uuid="7114379e-faf0-4991-a921-9a9030badf67"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Bairro:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="118" width="61" height="11" uuid="6c9113f2-29b4-48e8-a817-8125dda01e14"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Qd.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="293" y="118" width="52" height="11" uuid="dacb0422-cadd-4edd-9298-1344d4ae3a17"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Complem.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="167" y="14" width="77" height="11" uuid="29d5ddb7-c658-4a49-ac46-30754c53b5f6"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Qd. Inscrição:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="14" width="73" height="11" uuid="c56f9add-51a2-4d71-bd4a-92afd4448f8e"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lt. Inscrição:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="416" y="14" width="33" height="11" uuid="bfc76fdf-948b-4755-b0d5-48ebdc9c7563"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unid.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="484" y="14" width="33" height="11" uuid="377c591e-8fbd-478b-b980-e2fd87b41714"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Zona:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="244" y="25" width="33" height="11" uuid="2e4bf19d-a0fa-4b1c-968b-e7ee2675ebe6"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nr.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="379" y="25" width="35" height="11" uuid="f3c37256-f36d-49d4-8018-1d24ac5c1c84"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Bairro:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="266" y="36" width="49" height="11" uuid="b466189c-1ada-4b68-ad98-2b97b3f43d68"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Quadra:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="417" y="36" width="49" height="11" uuid="585ec421-8a8f-4bfc-b9a6-3196dcaf15d8"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lote:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="225" y="47" width="54" height="11" uuid="444649c7-e255-4441-b0e0-a0cbc9608fc8"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Conjunto:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="346" y="47" width="40" height="11" uuid="2b71afa0-d17e-4c28-a2e3-1883aa5919f8"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Bloco:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="434" y="47" width="40" height="11" uuid="1167259c-5248-4481-aced-81ddc737c364"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apto.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="128" y="118" width="24" height="11" uuid="6355a578-bb24-4142-97b8-82a3bceda1d3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lt.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="205" y="118" width="24" height="11" uuid="6355a578-bb24-4142-97b8-82a3bceda1d3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nr.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="107" width="35" height="11" uuid="6355a578-bb24-4142-97b8-82a3bceda1d3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Logra:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="3" width="415" height="11" uuid="22293d27-b2bf-42a7-862b-5382dc04b6c5"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{distrito_nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="14" width="100" height="11" uuid="c7c9ebd7-3c50-43ca-912c-b10faa947448"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{setor_nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="25" width="100" height="11" uuid="240272ab-b641-4a14-a25d-8a1f70cb17a0"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{logra_nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="36" width="199" height="11" uuid="0f21d31d-4537-47c4-8992-32be4a9d375a"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_complemento}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="47" width="155" height="11" uuid="6a7d78a4-d1ae-4d4d-9b8e-4bf7bf0b51bc"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{arq1144_ds_edificio}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="96" width="347" height="11" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="107" width="100" height="11" uuid="451d1a18-0c9d-4a74-89b3-5099be8cb0bb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_nm_bairro}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="118" width="58" height="11" uuid="3aad82ce-96fb-4600-93d8-5a058e9dc3ca"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+($F{pessoa_quadra_c} != null ? $F{pessoa_quadra_c} : "") :
+($F{pessoa_quadra} != null ? $F{pessoa_quadra} : "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="346" y="118" width="217" height="11" uuid="70362adb-f1d3-4115-be1c-7626fc534dce"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_complem_c} != null ? $F{pessoa_complem_c}  :  "")  :
+(  $F{pessoa_complem} != null ?    $F{pessoa_complem} :  "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="244" y="14" width="47" height="11" uuid="f1856b6a-c094-4839-b9dd-e768fda88f41"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_quadra1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="364" y="14" width="52" height="11" uuid="f5501197-7caf-466a-8d3f-7a80416c2cfd"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_lote1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="449" y="14" width="33" height="11" uuid="33064f6b-6c8c-4a2c-8879-74484e3c7b74"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_unidade}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="521" y="14" width="42" height="11" uuid="2f4c2756-b3fb-48e7-862b-98a9196808d0"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_zona}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="277" y="25" width="100" height="11" uuid="42c672ae-eab4-4207-8e8e-a2ad5b39d6a6"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_numero}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="417" y="25" width="137" height="11" uuid="19fe7358-2fde-41ab-9d99-91601166cf28"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bairro_nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="317" y="36" width="100" height="11" uuid="606d94b5-7592-4686-ae66-8d131f5ee814"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_quadra}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="466" y="36" width="100" height="11" uuid="90e6e931-d6a4-43af-8d63-0ae7c9dea959"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_lote}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="279" y="47" width="66" height="11" uuid="b71f841c-a54f-4081-a503-5c1ff4b036cd"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_conjunto}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="388" y="47" width="43" height="11" uuid="7b241084-7ebf-4dc7-92b8-be2995ea0fe6"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_bloco}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="474" y="47" width="89" height="11" uuid="9379a52e-2111-418b-902e-73684a975ca8"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_apto}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="154" y="118" width="51" height="11" uuid="3869f8a5-1f65-4732-8fd1-76d395f6d9cb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_lote_c} != null ?  $F{pessoa_lote_c} :  "") :
+(  $F{pessoa_lote} != null ?  $F{pessoa_lote}  :  "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="231" y="118" width="51" height="11" uuid="3869f8a5-1f65-4732-8fd1-76d395f6d9cb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_numero_c} != null ?  $F{pessoa_numero_c} :  "")  :
+( $F{pessoa_numero} != null ? $F{pessoa_numero}  :  "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="266" y="107" width="279" height="11" uuid="3869f8a5-1f65-4732-8fd1-76d395f6d9cb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_lote_c} != null ?  $F{pessoa_lote_c} :  "") :
+( $F{pessoa_lote} != null ?  $F{pessoa_lote} :  "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="0" y="73" width="205" height="13" backcolor="#FFFFFF" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" DADOS DO PROPRIETÁRIO"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="125" y="129" width="24" height="11" uuid="6355a578-bb24-4142-97b8-82a3bceda1d3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Bl.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="129" width="51" height="11" uuid="3869f8a5-1f65-4732-8fd1-76d395f6d9cb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_apto_c} != null ?  $F{pessoa_apto_c} :  "") :
+(  $F{pessoa_apto} != null ?  $F{pessoa_apto}  :  "")]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="129" width="61" height="11" uuid="6355a578-bb24-4142-97b8-82a3bceda1d3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apto.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="259" y="129" width="217" height="11" uuid="70362adb-f1d3-4115-be1c-7626fc534dce"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_edificio_c} != null ? $F{pessoa_edificio_c}  :  "")  :
+(  $F{pessoa_edificio} != null ?    $F{pessoa_edificio} :  "")]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="206" y="129" width="52" height="11" uuid="dacb0422-cadd-4edd-9298-1344d4ae3a17"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Edifício:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="152" y="129" width="51" height="11" uuid="3869f8a5-1f65-4732-8fd1-76d395f6d9cb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_end_corresp}.equals("1") ?
+( $F{pessoa_bloco_c} != null ?  $F{pessoa_bloco_c} :  "") :
+(  $F{pessoa_bloco} != null ?  $F{pessoa_bloco}  :  "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="466" y="96" width="97" height="11" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_pessoa_txt}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="414" y="96" width="52" height="11" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CPF/CNPJ:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="484" y="3" width="33" height="11" uuid="377c591e-8fbd-478b-b980-e2fd87b41714"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Casa:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="521" y="3" width="42" height="11" uuid="ac221319-2403-4945-93c0-8a9278817787"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_casa}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="86" width="61" height="11" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CCP:]]></text>
+				</staticText>
+				<textField pattern="###0;-###0" isBlankWhenNull="true">
+					<reportElement x="62" y="86" width="347" height="11" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pessoa_ccp}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="299" y="59" width="66" height="11" uuid="b71f841c-a54f-4081-a503-5c1ff4b036cd"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_habite_se}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="59" width="61" height="11" uuid="9dedb56c-5ca8-4ecf-970e-7285103426fe"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nº Habite-se:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="59" width="155" height="11" uuid="6a7d78a4-d1ae-4d4d-9b8e-4bf7bf0b51bc"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{num_habite_se}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="225" y="59" width="74" height="11" uuid="444649c7-e255-4441-b0e0-a0cbc9608fc8"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data Habite-se:]]></text>
+				</staticText>
+			</band>
+			<band height="64">
+				<rectangle>
+					<reportElement x="0" y="2" width="560" height="13" backcolor="#D7D7D7" uuid="4a3829cc-e363-4d55-b161-d2bd10680cea"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="1" y="37" width="91" height="11" uuid="6c9113f2-29b4-48e8-a817-8125dda01e14"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Área Edif. da Unid.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="15" width="91" height="11" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Testada Principal:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="37" width="103" height="11" uuid="6c9113f2-29b4-48e8-a817-8125dda01e14"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor Venal:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="15" width="103" height="11" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total Area Edificada:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="26" width="103" height="11" uuid="7114379e-faf0-4991-a921-9a9030badf67"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Area do Lote Vila:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="26" width="91" height="11" uuid="7114379e-faf0-4991-a921-9a9030badf67"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Qtde de Pavimentos:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="368" y="15" width="106" height="11" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Area do Lote:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="368" y="26" width="106" height="11" uuid="7114379e-faf0-4991-a921-9a9030badf67"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor M2: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="368" y="37" width="106" height="11" uuid="6c9113f2-29b4-48e8-a817-8125dda01e14"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Qtde de Unidade Lote:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="0" y="2" width="205" height="13" backcolor="#FFFFFF" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" MEDIDAS DO IMÓVEL"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="95" y="37" width="72" height="11" uuid="3aad82ce-96fb-4600-93d8-5a058e9dc3ca"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_area_edif_uni}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="95" y="15" width="72" height="11" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_testada_1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="95" y="26" width="72" height="11" uuid="451d1a18-0c9d-4a74-89b3-5099be8cb0bb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_qtde_pavimentos}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="287" y="37" width="81" height="11" uuid="3aad82ce-96fb-4600-93d8-5a058e9dc3ca"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_valor_venal}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="287" y="15" width="81" height="11" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_area_total_edif}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="287" y="26" width="81" height="11" uuid="451d1a18-0c9d-4a74-89b3-5099be8cb0bb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_area_lote_vila}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="474" y="15" width="80" height="11" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_area_lote}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="474" y="26" width="80" height="11" uuid="451d1a18-0c9d-4a74-89b3-5099be8cb0bb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_valor_m2_lote}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="474" y="37" width="80" height="11" uuid="3aad82ce-96fb-4600-93d8-5a058e9dc3ca"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_qtde_uni_lote}]]></textFieldExpression>
+				</textField>
+			</band>
+			<band height="13">
+				<rectangle>
+					<reportElement x="0" y="0" width="560" height="13" backcolor="#D7D7D7" uuid="4a3829cc-e363-4d55-b161-d2bd10680cea"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</rectangle>
+				<textField>
+					<reportElement mode="Transparent" x="0" y="0" width="205" height="13" backcolor="#FFFFFF" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" INFORMAÇÕES DO IMÓVEL E SERVIÇOS DISPONÍVEIS"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="64">
+				<rectangle>
+					<reportElement x="0" y="0" width="560" height="13" backcolor="#D7D7D7" uuid="4a3829cc-e363-4d55-b161-d2bd10680cea"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</rectangle>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="0" y="0" width="205" height="13" backcolor="#FFFFFF" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" INFORMAÇÕES COMPLEMENTARES"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="134" y="15" width="72" height="13" uuid="91ea2d5f-8c79-4e23-9309-e7e17e323b8f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_dt_construcao}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="7" y="33" width="121" height="13" uuid="7114379e-faf0-4991-a921-9a9030badf67"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Última Alteração:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="15" width="121" height="13" uuid="45da22f7-1a97-4d6f-8c47-e3bdf8528091"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data de Cadastramento::]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="134" y="33" width="72" height="13" uuid="451d1a18-0c9d-4a74-89b3-5099be8cb0bb"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bci_dt_construcao}]]></textFieldExpression>
+				</textField>
+			</band>
+			<band/>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="154" y="6" width="412" height="20" uuid="e63508e6-709b-4126-be8f-b6ea01ed5252"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ds_empresa}]]></textFieldExpression>
+			</textField>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="0" width="152" height="63" uuid="23b387d4-3041-4ba3-8204-92721cd7cd2d"/>
+				<imageExpression><![CDATA[$P{caminho_logo_prefeitura}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<subreport>
+				<reportElement x="3" y="2" width="256" height="13" uuid="d11c5e39-8970-4953-aa9d-fc282290315c"/>
+				<subreportParameter name="it01">
+					<subreportParameterExpression><![CDATA[$F{bci_it01}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it02">
+					<subreportParameterExpression><![CDATA[$F{bci_it02}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it03">
+					<subreportParameterExpression><![CDATA[$F{bci_it03}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it04">
+					<subreportParameterExpression><![CDATA[$F{bci_it04}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it05">
+					<subreportParameterExpression><![CDATA[$F{bci_it05}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it06">
+					<subreportParameterExpression><![CDATA[$F{bci_it06}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it07">
+					<subreportParameterExpression><![CDATA[$F{bci_it07}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it08">
+					<subreportParameterExpression><![CDATA[$F{bci_it08}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it09">
+					<subreportParameterExpression><![CDATA[$F{bci_it09}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it10">
+					<subreportParameterExpression><![CDATA[$F{bci_it10}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it11">
+					<subreportParameterExpression><![CDATA[$F{bci_it11}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it12">
+					<subreportParameterExpression><![CDATA[$F{bci_it12}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it13">
+					<subreportParameterExpression><![CDATA[$F{bci_it13}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it14">
+					<subreportParameterExpression><![CDATA[$F{bci_it14}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it15">
+					<subreportParameterExpression><![CDATA[$F{bci_it15}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it16">
+					<subreportParameterExpression><![CDATA[$F{bci_it16}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it17">
+					<subreportParameterExpression><![CDATA[$F{bci_it17}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it18">
+					<subreportParameterExpression><![CDATA[$F{bci_it18}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it19">
+					<subreportParameterExpression><![CDATA[$F{bci_it19}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it20">
+					<subreportParameterExpression><![CDATA[$F{bci_it20}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it21">
+					<subreportParameterExpression><![CDATA[$F{bci_it21}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it22">
+					<subreportParameterExpression><![CDATA[$F{bci_it22}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it23">
+					<subreportParameterExpression><![CDATA[$F{bci_it23}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it24">
+					<subreportParameterExpression><![CDATA[$F{bci_it24}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it25">
+					<subreportParameterExpression><![CDATA[$F{bci_it25}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it26">
+					<subreportParameterExpression><![CDATA[$F{bci_it26}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it27">
+					<subreportParameterExpression><![CDATA[$F{bci_it27}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it28">
+					<subreportParameterExpression><![CDATA[$F{bci_it28}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it29">
+					<subreportParameterExpression><![CDATA[$F{bci_it29}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it30">
+					<subreportParameterExpression><![CDATA[$F{bci_it30}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it31">
+					<subreportParameterExpression><![CDATA[$F{bci_it31}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it32">
+					<subreportParameterExpression><![CDATA[$F{bci_it32}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it33">
+					<subreportParameterExpression><![CDATA[$F{bci_it33}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it34">
+					<subreportParameterExpression><![CDATA[$F{bci_it34}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it35">
+					<subreportParameterExpression><![CDATA[$F{bci_it35}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it36">
+					<subreportParameterExpression><![CDATA[$F{bci_it36}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it37">
+					<subreportParameterExpression><![CDATA[$F{bci_it37}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it38">
+					<subreportParameterExpression><![CDATA[$F{bci_it38}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it39">
+					<subreportParameterExpression><![CDATA[$F{bci_it39}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it40">
+					<subreportParameterExpression><![CDATA[$F{bci_it40}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it41">
+					<subreportParameterExpression><![CDATA[$F{bci_it41}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it42">
+					<subreportParameterExpression><![CDATA[$F{bci_it42}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it43">
+					<subreportParameterExpression><![CDATA[$F{bci_it43}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it44">
+					<subreportParameterExpression><![CDATA[$F{bci_it44}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it45">
+					<subreportParameterExpression><![CDATA[$F{bci_it45}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it46">
+					<subreportParameterExpression><![CDATA[$F{bci_it46}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it47">
+					<subreportParameterExpression><![CDATA[$F{bci_it47}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="it48">
+					<subreportParameterExpression><![CDATA[$F{bci_it48}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="imovel">
+					<subreportParameterExpression><![CDATA[$F{bci_cci}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "/arrecadacao/bciinf1_af1.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="282" y="0" width="256" height="13" uuid="d11c5e39-8970-4953-aa9d-fc282290315c"/>
+				<subreportParameter name="info01">
+					<subreportParameterExpression><![CDATA[$F{bci_inf01}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info11">
+					<subreportParameterExpression><![CDATA[$F{bci_inf11}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info12">
+					<subreportParameterExpression><![CDATA[$F{bci_inf12}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info10">
+					<subreportParameterExpression><![CDATA[$F{bci_inf10}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info07">
+					<subreportParameterExpression><![CDATA[$F{bci_inf07}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info15">
+					<subreportParameterExpression><![CDATA[$F{bci_inf15}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info06">
+					<subreportParameterExpression><![CDATA[$F{bci_inf06}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info14">
+					<subreportParameterExpression><![CDATA[$F{bci_inf14}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info09">
+					<subreportParameterExpression><![CDATA[$F{bci_inf09}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info08">
+					<subreportParameterExpression><![CDATA[$F{bci_inf08}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info13">
+					<subreportParameterExpression><![CDATA[$F{bci_inf13}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info03">
+					<subreportParameterExpression><![CDATA[$F{bci_inf03}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info02">
+					<subreportParameterExpression><![CDATA[$F{bci_inf02}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info05">
+					<subreportParameterExpression><![CDATA[$F{bci_inf05}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="info04">
+					<subreportParameterExpression><![CDATA[$F{bci_inf04}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "/arrecadacao/bciinf1_serv.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="474" y="22" width="89" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="85052839-d4ee-41b2-b196-3a78833ee2ad"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="87" y="10" width="243" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="b63d2fe8-cb1d-4e65-8fd8-6e3a5cebdb47"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{usuario_impressao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="22" width="146" height="10" uuid="416c1e6f-b0e3-4f2d-a6f6-e31255275d1d"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1.8 - I.V.R.J - 23/08/2013]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="10" y="10" width="77" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="6c382e15-82fe-40e2-a4df-e874f0ad121e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Usuário impressão:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="565" height="1" uuid="80e9999a-fdd3-49a3-9eb9-8fea04885478"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="401" y="22" width="72" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="85052839-d4ee-41b2-b196-3a78833ee2ad"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Emitido em:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="9" width="80" height="12" uuid="2c10a36a-8496-47ca-9974-0818947a891a"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pag "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="518" y="9" width="40" height="12" uuid="39663eb9-a454-4d7a-b663-11cbd7d93648"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
